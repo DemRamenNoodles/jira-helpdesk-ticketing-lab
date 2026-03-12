@@ -1,0 +1,14 @@
+Step 01 - Intake
+User reports inability to log in Monday morning. Ticket opened in Jira, priority set to High, assigned to Tier 1 support.
+
+Step 02 - Scope Check
+Confirmed issue is isolated to one user. Checked account status — no system-wide outage reported.
+
+Step 03 - Root Cause
+Password expired over the weekend. Account locked after multiple failed login attempts by the user.
+
+Step 04 - Resolution
+Reset password in Active Directory, unlocked account, enforced password change on next login. Confirmed with user via phone.
+
+Step 05 - Closure
+User confirmed successful login. Ticket updated with resolution notes and closed in Jira. Recommended enabling password expiry email notifications to prevent recurrence.
