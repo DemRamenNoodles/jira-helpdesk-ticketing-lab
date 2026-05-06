@@ -1,8 +1,8 @@
-# KAN-4: User Account Locked Out After Password Expiration
+# Jira Helpdesk — Account Lockout After Password Expiration
 
 | | |
 |---|---|
-| **Incident** | User unable to log in after password expiration |
+| **Incident** | User unable to log in after password expiration (KAN-4) |
 | **Severity** | High. Blocked from critical work |
 | **Root Cause** | Password expired + AD account locked after failed attempts |
 | **Status** | Resolved. Same-day fix |
@@ -22,9 +22,9 @@ Monday morning, Marcus reported he couldn't log in to his workstation. The syste
 
 **Supporting screenshots:**
 
-![Ticket opened in Jira](screenshots/Step01A.png)
+![Jira ticket opened — KAN-4 logged as Incident, High priority](screenshots/Step01A.png)
 
-![Full ticket details](screenshots/Step01B.png)
+![Full ticket details — summary, description, and priority confirmed](screenshots/Step01B.png)
 
 ---
 
@@ -36,17 +36,13 @@ First thing I needed to rule out: was this just Marcus, or was the whole domain 
 
 I verified that other users could log in fine and that Marcus's workstation was on the network with an active account. That ruled out a system outage or a general network problem. The issue was specific to Marcus.
 
-**Diagnosis screenshot (9:04 AM):**
-
-![Scope confirmed](screenshots/Step02A.png)
+![Scope check confirmed — other domain users authenticating successfully (9:04 AM)](screenshots/Step02A.png)
 
 **Root Cause**
 
 I pulled up Active Directory and checked the password policy. The answer was clear: Marcus's password had expired Friday, and the account locked after too many failed login attempts Monday morning. Standard AD behavior, nothing malicious.
 
-**Root cause screenshot (9:11 AM):**
-
-![Active Directory check](screenshots/Step03A.png)
+![Active Directory account view — password expired + account locked (9:11 AM)](screenshots/Step03A.png)
 
 ---
 
@@ -54,17 +50,21 @@ I pulled up Active Directory and checked the password policy. The answer was cle
 
 With the root cause confirmed, the fix was straightforward. I reset the password in Active Directory and unlocked the account. Then I had Marcus test the login immediately.
 
-**Why this didn't bounce back:** I didn't just fix it and move on. I waited for Marcus to confirm access was restored before closing the ticket. That extra step is the difference between resolved and reopened.
+Marcus confirmed he was back in a few minutes later:
+
+> "Hey, that worked! I'm back in and got through the password reset fine. Thanks for the help, I can actually get started on my morning now."
+
+**What made this close smoothly:** verification. I didn't just fix it and move on. I waited for Marcus to confirm access was restored before closing the ticket. That extra step is the difference between resolved and reopened.
 
 **Prevention:** I documented a recommendation to enable password expiry notification emails so users get warned before the deadline, not locked out after. Without that note, this same call comes back in three months. That's the difference between closing a ticket and actually solving the problem.
 
 **Resolution screenshots (9:18 AM to 9:26 AM):**
 
-![Password reset confirmed](screenshots/Step04A.png)
+![Password reset confirmed in Active Directory](screenshots/Step04A.png)
 
-![Closure confirmed](screenshots/Step05A.png)
+![Ticket closure confirmed with resolution notes](screenshots/Step05A.png)
 
-![Resolved](screenshots/Step05B.png)
+![KAN-4 marked Resolved on the Kanban board](screenshots/Step05B.png)
 
 ---
 
@@ -80,7 +80,7 @@ Ten minutes of actual work. Password reset, account unlock, done. But the way I 
 
 ## Lab Context: The Jira Board Setup
 
-This case study sits inside a broader IT Helpdesk lab. The foundation is a Kanban board with four columns (To Do, In Progress, Waiting for Customer, Resolved) and three ticket types:
+I built this case study inside a broader IT Helpdesk lab. The foundation is a Kanban board I set up with four columns (To Do, In Progress, Waiting for Customer, Resolved) and three ticket types:
 
 - **Incidents**: Break-fix issues that need to move now
 - **Service Requests**: Planned work like installs, new setups, or access requests
@@ -117,4 +117,4 @@ The queue below shows what a realistic helpdesk queue looks like. Multiple incid
 
 ---
 
-*Case Study | Lab Simulation | March 2026*
+*Case Study, Lab Simulation, March 2026*
