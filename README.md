@@ -1,4 +1,4 @@
-# Jira Helpdesk — Account Lockout After Password Expiration
+# Jira Helpdesk: Account Lockout After Password Expiration
 
 | | |
 |---|---|
@@ -22,9 +22,9 @@ Monday morning, Marcus reported he couldn't log in to his workstation. The syste
 
 **Supporting screenshots:**
 
-![Jira ticket opened — KAN-4 logged as Incident, High priority](screenshots/Step01A.png)
+![Jira ticket opened: KAN-4 logged as Incident, High priority](screenshots/Step01A.png)
 
-![Full ticket details — summary, description, and priority confirmed](screenshots/Step01B.png)
+![Full ticket details: summary, description, and priority confirmed](screenshots/Step01B.png)
 
 ---
 
@@ -36,13 +36,13 @@ First thing I needed to rule out: was this just Marcus, or was the whole domain 
 
 I verified that other users could log in fine and that Marcus's workstation was on the network with an active account. That ruled out a system outage or a general network problem. The issue was specific to Marcus.
 
-![Scope check confirmed — other domain users authenticating successfully (9:04 AM)](screenshots/Step02A.png)
+![Scope check confirmed: other domain users authenticating successfully (9:04 AM)](screenshots/Step02A.png)
 
 **Root Cause**
 
 I pulled up Active Directory and checked the password policy. The answer was clear: Marcus's password had expired Friday, and the account locked after too many failed login attempts Monday morning. Standard AD behavior, nothing malicious.
 
-![Active Directory account view — password expired + account locked (9:11 AM)](screenshots/Step03A.png)
+![Active Directory account view: password expired + account locked (9:11 AM)](screenshots/Step03A.png)
 
 ---
 
