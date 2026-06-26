@@ -86,23 +86,7 @@ I built this case study inside a broader IT Helpdesk lab. The foundation is a Ka
 - **Service Requests**: Planned work like installs, new setups, or access requests
 - **Tasks**: Internal IT items like audits or documentation
 
-The queue below shows what a realistic helpdesk queue looks like. Multiple incidents at different stages, service requests waiting for approval, and background tasks that keep the system running.
-
-| Ticket | Summary | Type | Status |
-|--------|---------|------|--------|
-| KAN-4 | User account locked out after password expiration | Incident | Resolved |
-| KAN-5 | Laptop not connecting to company Wi-Fi | Incident | In Progress |
-| KAN-6 | Blue screen of death on Windows 10 workstation | Incident | In Progress |
-| KAN-7 | Outlook not sending or receiving emails | Incident | In Progress |
-| KAN-8 | Shared drive inaccessible after permissions change | Incident | Waiting for Customer |
-| KAN-9 | Password reset request | Service Request | To Do |
-| KAN-10 | Software install request, Microsoft Teams | Service Request | To Do |
-| KAN-11 | New employee workstation setup | Service Request | To Do |
-| KAN-12 | Request for dual monitor setup | Service Request | Resolved |
-| KAN-13 | VPN access request for remote work | Service Request | Waiting for Customer |
-| KAN-14 | Update antivirus definitions on all workstations | Task | To Do |
-| KAN-15 | Audit user accounts in Active Directory | Task | To Do |
-| KAN-16 | Document onboarding IT checklist | Task | To Do |
+KAN-4 (the ticket walked through above) is one of the Incidents that ran through this board.
 
 ---
 
